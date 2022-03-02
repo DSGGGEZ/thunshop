@@ -1,0 +1,50 @@
+CREATE TABLE promotion (
+  idpromotion INTEGER   NOT NULL AUTO_INCREMENT,
+  promocode VARCHAR(20)      ,
+PRIMARY KEY(idpromotion));
+
+
+
+
+CREATE TABLE product (
+  idproduct INTEGER   NOT NULL AUTO_INCREMENT,
+  brand VARCHAR(20)    ,
+  producttype VARCHAR(20)    ,
+  spec VARCHAR(20)    ,
+  price INTEGER      ,
+PRIMARY KEY(idproduct));
+
+
+
+
+CREATE TABLE branch_store (
+  idbranch_store INTEGER   NOT NULL AUTO_INCREMENT,
+  storename VARCHAR(20)    ,
+  address VARCHAR(20)    ,
+  city VARCHAR(20)      ,
+PRIMARY KEY(idbranch_store));
+
+
+
+
+CREATE TABLE customer (
+  idcustomer INTEGER   NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20)    ,
+  address VARCHAR(20)    ,
+  city VARCHAR(20)      ,
+PRIMARY KEY(idcustomer));
+
+
+
+
+CREATE TABLE customer_order (
+  idcustomer_order INTEGER   NOT NULL AUTO_INCREMENT,
+  idpromotion INTEGER   NOT NULL ,
+  idproduct INTEGER   NOT NULL ,
+  idbranch_store INTEGER   NOT NULL ,
+  idcustomer INTEGER   NOT NULL ,
+  date DATE      ,
+PRIMARY KEY(idcustomer_order));
+
+
+
